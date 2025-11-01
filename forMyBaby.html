@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11 Month-versary 💖</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="heart-frame">
+
+    <header class="cute-border">
+       <h1>Happy 11 Months, My Love <span id="clickHeart">💕</span></h1>
+       
+    </header>
+
+    <!-- Floating hearts -->
+    <div id="hearts-container"></div>
+
+    <!-- Sweet general message -->
+    <section class="sweet-message cute-border">
+      <h2>💖 Hi My Cutu 💖</h2>
+      <p>IT'S BEEN 11 MONTHS!!!! WOOOHOOOOO!!! sorry that im unable to give you a physical card, but i still wanna make giving cards a thing between 
+        me to you so here is me trying to make use of knowing how to code. i know its not perfect. im sure you already knew, but this is just a little reminder
+        that you are my favorite person in the world. i could search the world and never find anyone as special as you. you're everything i've ever wanted and more. 
+        and i love you to the moon and back, Jaggu 🌙💫
+      </p>
+    </section>
+
+    <!-- Notes (Interactive Flip Notes) -->
+<div class="notes-container cute-border">
+  <div class="note flip-note">
+    <div class="note-inner">
+      <div class="note-front">
+        <h2>To the most prettiest boy 💌</h2>
+        <p>Hover to reveal 💗</p>
+      </div>
+      <div class="note-back">
+        <p>Having you in my life has given it a sense of direction, and i cant trade the happiness in my heart for anything else. you will always be the one i love 💗</p>
+        <img src="images/love1.jpg" alt="Love Image">
+      </div>
+    </div>
+  </div>
+
+  <div class="note flip-note">
+    <div class="note-inner">
+      <div class="note-front">
+        <h2>To the one who has my heart 🌸</h2>
+        <p>Hover to reveal 🥰</p>
+      </div>
+      <div class="note-back">
+        <p>I hope you never forget how much you mean to me. how when i think of you, all my nerves calm. how you make me feel so seen. so loved. and how proud i am to be yours 🥰</p>
+        <img src="images/love2.jpg" alt="Love Image">
+      </div>
+    </div>
+  </div>
+
+  <div class="note flip-note">
+    <div class="note-inner">
+      <div class="note-front">
+        <h2>11 Months Together 🥳</h2>
+        <p>Hover to reveal ✨</p>
+      </div>
+      <div class="note-back">
+        <p>Thank you for staying. even if our relationhsip has its on-and-off moments. thank you for making the effort to update me and talk to me despite being so busy
+            and having so much on your mind. thank you for the patience you showed me, even in the moments when i didnt deserve it. im forever grateful for you. 💕
+        </p>
+        <img src="images/love3.jpg" alt="Love Image">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Floating Balloons Section -->
+<section class="balloon-messages cute-border">
+  <h2>∞ Forever Us ∞</h2>
+  <p style="font-size:10px; opacity:0.2; cursor:pointer;" id="secretWhisper">
+pssst... click me
+</p>
+
+  <div class="balloon-container">
+    <div class="balloon">💌 Thank you for always being by my side 🥰</div>
+    <div class="balloon">🥰 You make every day brighter!</div>
+    <div class="balloon">❤️ You make life more beautiful just by being in it 🌷</div>
+    <div class="balloon">🌟 I never want to let go of you 💗</div>
+    <div class="balloon">Every day with you is a gift 🎁</div>
+    <div class="balloon">💌 Always & forever together!</div>
+    <div class="balloon">😘 You understand me like no one else ever could 🥰</div>
+    <div class="balloon">❤️ Being with you feels like home 💫</div>
+    <div class="balloon">I miss you 🥺</div>
+    <div class="balloon">When you comeback, im gonna take your nose 🙄</div>
+    <div class="balloon">🍕 I love you more than how much you love cheese pizzas 🍕</div>
+  </div>
+</section>
+
+
+    <section class="scratch-section cute-border">
+  <h2>🎉 Scratch it 🎉</h2>
+  <div class="scratch-card">
+    <div class="slideshow">
+      <img src="images/love4.jpg" alt="Love">
+      <img src="images/love5.jpg" alt="Love">
+      <img src="images/love6.jpg" alt="Love">
+      <img src="images/love7.jpg" alt="Love">
+      <img src="images/love8.jpg" alt="Love">
+      <img src="images/love9.jpg" alt="Love">
+      <img src="images/love10.jpg" alt="Love">
+      <img src="images/love11.jpg" alt="Love">
+      <img src="images/love12.jpg" alt="Love">
+      <img src="images/love13.jpg" alt="Love">
+      <img src="images/love14.jpg" alt="Love">
+      <img src="images/love15.jpg" alt="Love">
+    </div>
+    <canvas id="scratchCanvas"></canvas>
+  </div>
+</section>
+
+  </div>
+
+  <div id="secretLoveMsg" style="
+  display:none; 
+  position:fixed;
+  top:50%; left:50%;
+  transform:translate(-50%, -50%);
+  background:white;
+  padding:20px 30px;
+  border-radius:20px;
+  font-size:22px;
+  text-align:center;
+  box-shadow:0 5px 20px rgba(0,0,0,.2);
+  z-index:9999;
+  color:#ff4b8b;
+">
+💖 Muah Muahh Muahhhh! I love you times infinity times infinity 💖
+</div>
+
+<div id="cornerSecret" style="
+  position:fixed;
+  bottom:8px; 
+  right:8px;
+  width:28px; 
+  height:28px;
+  opacity:0.3;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  transition:opacity 0.3s;
+">
+  💗
+</div>
+
+<!-- Secret audio heart -->
+<div id="audioSecret" style="
+  position:fixed;
+  top:20px; 
+  left:10px; 
+  width:28px; 
+  height:28px;
+  opacity:0.3;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  transition:opacity .3s;
+">
+  🎧
+</div>
+
+<!-- Hidden audio -->
+<audio id="loveAudio" src="audio/iloveyou.m4a"></audio>
+
+
+
+</body>
+</html>

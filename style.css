@@ -1,0 +1,398 @@
+/* GENERAL STYLES */
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #ffe4e6;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cute border around sections */
+/* .cute-border {
+  border: 3px dashed #f472b6;
+  border-radius: 25px;
+  margin: 20px auto;
+  padding: 15px;
+  max-width: 90%;
+  box-sizing: border-box;
+} */
+
+/* Header */
+header h1 {
+  font-size: 3rem;
+  color: #db2777;
+  margin: 0;
+}
+
+/* HEART FRAME */
+.heart-frame {
+  position: relative;
+  padding: 40px;
+  margin: 20px;
+  border-radius: 50% / 20%; /* rounded heart-like shape */
+  box-shadow: 0 0 30px rgba(255, 114, 182, 0.5);
+  background: #ffe4e6;
+  overflow: hidden;
+}
+
+/* Hearts along the frame edges */
+.heart-frame .frame-heart {
+  position: absolute;
+  font-size: 1.5rem;
+  color: #f472b6;
+  animation: floatFrame 3s infinite alternate;
+}
+
+@keyframes floatFrame {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+  50% { transform: translateY(-5px) rotate(10deg); opacity: 1; }
+  100% { transform: translateY(0) rotate(-10deg); opacity: 0.6; }
+}
+
+
+/* FLOATING HEARTS */
+#hearts-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  font-size: 2rem;
+  color: #f472b6;
+  cursor: pointer;
+  user-select: none;
+  animation: float linear infinite;
+}
+
+@keyframes float {
+  0%   { transform: translateY(100px); opacity: 0; }
+  50%  { opacity: 1; }
+  100% { transform: translateY(-50px); opacity: 0; }
+}
+
+/* SWEET MESSAGE */
+.sweet-message h2 {
+  font-size: 2rem;
+  color: #db2777;
+}
+.sweet-message p {
+  font-size: 1.2rem;
+  color: #6b7280;
+  margin: 10px;
+}
+
+/* NOTES */
+.notes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Flip notes */
+.flip-note {
+  width: 250px;
+  height: 450px; /* fixed height for all cards */
+  perspective: 1000px;
+}
+
+.note-inner {
+  position: relative;
+  width: 100%;
+  height: 100%; /* fill the flip-note */
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Flip on hover */
+.flip-note:hover .note-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and back panels */
+.note-front, .note-back {
+  position: absolute; /* required for flipping */
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  text-align: center;
+  overflow: hidden; /* prevents content overflow */
+}
+
+/* Front styling */
+.note-front {
+  background: linear-gradient(135deg, #fbcfe8, #f472b6);
+  color: white;
+  font-weight: bold;
+}
+
+/* Back styling */
+.note-back {
+  background: #fff0f5;
+  color: #db2777;
+  transform: rotateY(180deg);
+}
+
+/* Images inside the card */
+.note-back img {
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+  max-height: 40%; /* adjusts image to fit card height */
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+
+
+/* Balloon Messages Section */
+.balloon-messages h2 {
+  font-size: 2rem;
+  color: #db2777;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.balloon-container {
+  position: relative; /* Container holds balloons */
+  height: 300px;      /* Set height so balloons have space to float */
+}
+
+/* Individual Balloons */
+.balloon {
+  position: absolute;
+  bottom: -50px;
+  background: linear-gradient(135deg, #ffb6c1, #f472b6);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  white-space: nowrap;
+  animation-name: floatUp;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Assign unique left positions and durations */
+.balloon-container .balloon:nth-child(1)  { left: 5%;  animation-duration: 8s; }
+.balloon-container .balloon:nth-child(2)  { left: 15%; animation-duration: 10s; }
+.balloon-container .balloon:nth-child(3)  { left: 25%; animation-duration: 12s; }
+.balloon-container .balloon:nth-child(4)  { left: 35%; animation-duration: 9s; }
+.balloon-container .balloon:nth-child(5)  { left: 45%; animation-duration: 11s; }
+.balloon-container .balloon:nth-child(6)  { left: 55%; animation-duration: 13s; }
+.balloon-container .balloon:nth-child(7)  { left: 65%; animation-duration: 10s; }
+.balloon-container .balloon:nth-child(8)  { left: 75%; animation-duration: 14s; }
+.balloon-container .balloon:nth-child(9)  { left: 85%; animation-duration: 12s; }
+.balloon-container .balloon:nth-child(10) { left: 20%; animation-duration: 15s; }
+.balloon-container .balloon:nth-child(11) { left: 60%; animation-duration: 16s; }
+
+/* Balloon floating animation */
+@keyframes floatUp {
+  0%   { transform: translateY(0) scale(0.8); opacity: 0; }
+  20%  { opacity: 1; }
+  100% { transform: translateY(-300px) scale(1); opacity: 0; }
+}
+
+/* FOOTER */
+footer {
+  margin: 20px 0;
+  color: #9ca3af;
+}
+
+/* LOCK SCREEN */
+.lock-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ffe4e6;
+  text-align: center;
+}
+
+.lock-screen h1 {
+  color: #db2777;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.lock-screen input {
+  padding: 10px;
+  font-size: 1.2rem;
+  width: 200px;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #f472b6;
+  margin-bottom: 15px;
+}
+
+.lock-screen button {
+  padding: 10px 20px;
+  background-color: #f472b6;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.lock-screen button:hover {
+  background-color: #db2777;
+}
+
+#password {
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+/* POPUP ALERT */
+.popup-alert {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.5) rotate(-10deg);
+  background-color: #ffcccc;
+  color: #800000;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 9999;
+}
+
+.popup-alert.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.3) rotate(0deg);
+  animation: shake 0.6s ease-in-out, bounce 0.5s ease forwards;
+}
+
+@keyframes bounce {
+  0%   { transform: translateX(-50%) scale(0.5); }
+  50%  { transform: translateX(-50%) scale(1.4); }
+  100% { transform: translateX(-50%) scale(1.2); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(-50%) rotate(0deg); }
+  25%      { transform: translateX(-52%) rotate(-5deg); }
+  50%      { transform: translateX(-48%) rotate(5deg); }
+  75%      { transform: translateX(-52%) rotate(-5deg); }
+}
+
+/* FLOATING HEARTS (CLICKABLE) */
+.floating-heart {
+  position: fixed;
+  bottom: 0;
+  font-size: 20px;
+  animation: floatUp linear forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes floatUp {
+  0%   { transform: translateY(0) scale(0.5); opacity: 1; }
+  50%  { transform: translateY(-50vh) scale(1.2); opacity: 0.8; }
+  100% { transform: translateY(-100vh) scale(0.8); opacity: 0; }
+}
+
+
+/* Scratch Card Section */
+/* Scratch Card */
+.scratch-card {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+/* Slideshow container */
+.slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;              /* <-- use flex */
+  justify-content: center;    /* center horizontally */
+  align-items: center;        /* center vertically */
+  perspective: 1000px;
+}
+
+/* Individual images */
+.slideshow img {
+  position: absolute;         /* keep absolute for stacking */
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;                /* maintain aspect ratio */
+  height: auto;               /* maintain aspect ratio */
+  object-fit: cover;
+  border-radius: 20px;
+  opacity: 0;
+  transform: scale(1) rotate(0deg);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.slideshow img.active {
+  opacity: 1;
+  transform: scale(1.05) rotate(0deg); /* zoom slightly, no shift */
+}
+
+
+/* Canvas overlay */
+#scratchCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: #f472b6;
+}
+
+/* Floating hearts/sparkles */
+.floating-scratch {
+  position: absolute;
+  font-size: 20px;
+  pointer-events: none;
+  z-index: 3;
+  animation: floatUpScratch 1s forwards;
+}
+
+@keyframes floatUpScratch {
+  0%   { transform: translateY(0) scale(0.5); opacity: 1; }
+  50%  { transform: translateY(-50px) scale(1.2); opacity: 0.8; }
+  100% { transform: translateY(-100px) scale(0.8); opacity: 0; }
+}
+
+#cornerSecret:hover {
+  opacity: 0.8;
+}
+
+#audioSecret:hover {
+  opacity: 0.8;
+}
